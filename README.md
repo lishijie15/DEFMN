@@ -16,7 +16,7 @@ The complete load and DG datasets will be made publicly available later. The per
 
 #### Requirements
 
-MGGLTN is compatible with PyTorch==1.13 versions.
+DEFMN is compatible with PyTorch==1.13 versions.
 
 All neural networks are implemented using PyTorch and trained on a single NVIDIA H100 80GB GPU.
 
