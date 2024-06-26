@@ -10,23 +10,13 @@
 
 ### Installation and Run
 
-#### Arguments
-
-- **EXPY-TKY:**
-
-  The hyper-parameters for EXPY-TKY are in MGGLTN_traffic/MGGLTN_main.py. Note EXPY-TKY data is structured by month, where '202110' and '202111' used as training and validation and '202112' used as testing. By further setting val_ratio as 0.25 (that meas 25% data of '202110' and '202111' as valid data), the ratio for train:valid:test is roughly 3:1:2. The time interval for EXPY-TKY is 10 minutes. </br>
-
-
-
 #### Datasets
 
-We conducted experiments on three different datasets (i.e., METR-LA, REMS-BAY, EXPY-TKY). You can find the datasets we used in the directory labeled as https://github.com/deepkashiwa20/MegaCRN.
-
-
+The complete load and DG datasets will be made publicly available later. The performance of the proposed model can be tested using partial univariate datasets (e.g., EXPY-TKY in MegaCRN). However, univariate datasets may not fully demonstrate the capabilities of DEFMN.
 
 #### Requirements
 
-MGGLTN is compatible with PyTorch==1.13 versions.
+DEFMN is compatible with PyTorch==1.13 versions.
 
 All neural networks are implemented using PyTorch and trained on a single NVIDIA H100 80GB GPU.
 
@@ -40,7 +30,7 @@ pip install -r requirements.txt
 
 #### Run Our Model
 
-To run our model, please execute the following code in the directory labeled as "DEFMN".
+To run our model, please execute the following code in the directory as `./DEFMN`.
 
 ```
 python DEFMN_main.py 
