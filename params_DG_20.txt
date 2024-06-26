@@ -1,0 +1,27 @@
+[common]
+N_link = 2528
+adj01_path = ../power_DG_20/expy-co_adj01.npy
+road_path = ../power_DG_20/expy-co_link_info.csv
+
+[power_DG_200710]
+power_path = ../power_DG_20/power_DG_200710.csv
+
+[power_DG_200711] 
+power_path = ../power_DG_20/power_DG_200711.csv
+
+[power_DG_200712] 
+test_month = ['power_DG_200712']
+train_month = ['power_DG_200710', 'power_DG_200711']
+power_path = ../power_DG_20/power_DG_200712.csv
+
+[whole]
+compose = ../power_DG_20/compose_0.csv
+
+[power_DG_20]
+subroad_path = ../power_DG_20/co_link_idx.csv
+
+[EXPYTKY]
+subroad_path = ../EXPYTKY/tokyo_link_idx.csv
+
+[EXPYTKY*]
+subroad_path = ../power_DG_20/tokyoall_link_idx.csv
