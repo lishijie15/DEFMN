@@ -34,7 +34,7 @@ pip install -r requirements.txt
 
 #### Run Our Model
 
-To run our model, please execute the following code in the directory as `./DEFMN`.
+To run our model, please execute the following code in the directory as `./`.
 
 ```
 python DEFMN_main.py 
