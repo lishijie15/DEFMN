@@ -39,5 +39,19 @@ To run our model, please execute the following code in the directory as `./`.
 ```
 python DEFMN_main.py 
 ```
+## BibTeX
+If you find our work useful in your research. Please consider giving a star ⭐ and citation 📚.
 
+```bash
+@ARTICLE{11124332,
+  author={Li, Shijie and Hu, Ruican and Chen, Guanlin and Chen, Lulu and Li, He and Jiang, Huaiguang and Xue, Ying and Kang, Jiawen and Zhang, Jun and Gao, David Wenzhong},
+  journal={IEEE Transactions on Power Systems}, 
+  title={Efficient Net Load Forecasting in Large-scale Power Distribution Systems via Dual-branch Experts Fusion Memory Network}, 
+  year={2025},
+  volume={},
+  number={},
+  pages={1-12},
+  doi={10.1109/TPWRS.2025.3598366}
+}
+```
 
