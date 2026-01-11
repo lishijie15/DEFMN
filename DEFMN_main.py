@@ -347,25 +347,23 @@ def main():
     test_time = [get_time(config[month]['power_path'], N_link, subroad_path) for month in test_month]
     # adj_bank = get_adj(adj_path, subroad_path)
 
-    load_data = [data[:, :, 0] for data in train_data + test_data]  # better to only use train_data
-    pv_data = [data[:, :, 1] for data in train_data + test_data]
-    wind_data = [data[:, :, 2] for data in train_data + test_data]
-
-    load_data = np.vstack(load_data)
-    pv_data = np.vstack(pv_data)
-    wind_data = np.vstack(wind_data)
-
+    load_data_train = np.vstack([data[:, :, 0] for data in train_data])
+    pv_data_train = np.vstack([data[:, :, 1] for data in train_data])
+    wind_data_train = np.vstack([data[:, :, 2] for data in train_data])
     scalers = create_scalers(args.input_dim)
+    scalers[0].fit(load_data_train)
+    scalers[1].fit(pv_data_train)
+    scalers[2].fit(wind_data_train)
 
-    scalers[0].fit(load_data)
-    scalers[1].fit(pv_data)
-    scalers[2].fit(wind_data)
-
-    for data in train_data + test_data:
+    for data in train_data:
         data[:, :, 0] = scalers[0].transform(data[:, :, 0])
         data[:, :, 1] = scalers[1].transform(data[:, :, 1])
         data[:, :, 2] = scalers[2].transform(data[:, :, 2])
-
+    for data in test_data:
+        data[:, :, 0] = scalers[0].transform(data[:, :, 0])
+        data[:, :, 1] = scalers[1].transform(data[:, :, 1])
+        data[:, :, 2] = scalers[2].transform(data[:, :, 2])
+        
     logger.info(args.dataset, args.month, 'training started', time.ctime())
     trainXS, trainYS = getXSYS(train_data, args.seq_len, args.out_len)
     trainXCov, trainYCov = getXSYS(train_time, args.seq_len, args.out_len)
